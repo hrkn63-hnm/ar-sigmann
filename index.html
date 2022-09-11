@@ -11,6 +11,21 @@
     <title>任意のページタイトル</title>
   </head>
   <body style="margin: 0; overflow: hidden">
-    <h1>HELLO</h1>
+    <a-scene embedded arjs vr-mode-ui="enabled: false;">
+	    
+      <!-- 3DCGモデルを読み込む -->
+      <a-assets>
+        <a-asset-item id="tiger" src="./asset/sigumann.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- マーカーの.pattファイルを読み込む -->
+      <a-marker type="pattern" url="./asset/pattern-frame.patt">
+        <!-- 3Dモデルを呼び出す -->
+        <a-entity gltf-model="#tiger"></a-entity>
+      </a-marker>
+
+      <!-- カメラを追加 -->
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
